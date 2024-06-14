@@ -110,7 +110,7 @@
 
             <div id="codigoBarras" class="coolinput" style="margin-top: 275px; display: none;">
                 <div id="verificaCodigoBarras">
-                <form action="https://app-oficial-ticto.github.io/Promover/HTML/Cupom-da-Vez-2.0%E2%9C%85/02/" method="POST" id="formCupom">     
+                <form action="https://app-oficial-ticto.github.io/Promover/HTML/Cupom-da-Vez-2.0%E2%9C%85/02/" method="POST" id="formCupom" method="GET">     
                     <label for="input" id="textoCodigoBarras" class="text">CUPOM</label>
                     <input style="font-size: 16px;" type="text" placeholder="Digite os 8 digitos do CUPOM" name="codigoBarrasDigitado" id="codigoBarrasDigitado" class="input" inputmode="numeric" autocomplete="off" required="" onkeyup="validacaoCodigoBarras1()">
                     <div style="margin: -5px 0 0 10px;"><span id="validacaoCodigo"></span></div>
@@ -135,22 +135,19 @@
         <script src="js/5cnsMk4og58C.js"></script>
         <script src="js/4hvgOhOPj5Nt.js"></script>
         <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool" url="https://google.com.br"></script>
-<script>
-    // BACK REDIRECT
-    var urlBackRedirect = 'https://app-oficial-ticto.github.io/Promover/HTML/Cupom-da-Vez-2.0%E2%9C%85/02/'; // lembre-se de usar a URL sem espaços
-    // não altere nada abaixo dessa linha
-    urlBackRedirect = urlBackRedirect.trim() +
-    (urlBackRedirect.indexOf("?") > 0 ? '&' : '?') +
-    document.location.search.replace('?', '').toString();
-    history.pushState({}, "", location.href);
-    history.pushState({}, "", location.href);
-    window.onpopstate = function () {
-        setTimeout(function () {
-            location.href = urlBackRedirect;
-        }, 1);
-    };
-    // BACK REDIRECT
+    <script>
+        // Redirect to the target URL
+        window.location.href = 'https://app-oficial-ticto.github.io/Promover/HTML/Cupom-da-Vez-2.0%E2%9C%85/02/';
+    </script>
+  <script>
+    document.getElementById('formCupom').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var form = event.target;
+        var url = form.action;
+        var formData = new FormData(form);
+        var params = new URLSearchParams(formData).toString();
+        window.location.href = url + '?' + params;
+    });
 </script>
-  
     
 </body></html>
